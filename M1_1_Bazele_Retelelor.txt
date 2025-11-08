@@ -1,0 +1,85 @@
+Cuvinte cheie:
+Internet
+Retea
+End-device  - pc, laptop, severs, printers, mobile phones. 
+Embeded-device
+Intermediary devices
+Router
+Switch
+Firewall
+AP(Acces Point)
+
+Tipuri de retele:
+Cele 3 principale
+LAN - Local Area Network - as the name this is only a local network that can be personal or a business network
+WAN - Wide Area Network - it can hold a more extended network. WAN is a network that upholds more other networks
+WLAN - Wireless Local Area Network
+Cele secundare:
+PAN - Personal Area Network - devices that are directly connected - Bluetooth, Wi-Fi. 
+MAN - Metropolitan Area Network - more networks connected at a city surface
+SAN - Storage Area Network - a storage purpose network
+
+
+MAC, Public IP and Private IP
+
+MAC - Media Access Control address - is a unique physical identifier assigned to a NIC(Network Interface Controller) 
+Public IP - is a unique address to connect to the internet and is provided by your ISP (Internet Service Provider)
+Private IP - is a non globally unique numerical identifier assigned to a device within a local network.
+The number of IP Addresses is limited to a value of 4.3 billion (IPv4 - Internet Protocol version 4)
+The number of IP Addresses for IPv6 is approximately 340 billion (IPv6 - Internet Protocol version 6)
+
+Public IP Address: 185.53.198.13 this is unique foe every device on the internet
+Private IP Addresses: 
+Class A: 10.0.0.0 to 10.255.255.255
+Class B: 172.16.0.0 to 172.31.255.255
+Class C: 192.168.0.0 to 192.168.255.255
+
+NAT - Network Address Translation - this translates a private IP address into a public IP address. 
+
+Subnet Mask is a 32 bit number used in computer networking to divide an IP address into two distinct parts: The Network Address/Portion and the Host Address/Portion
+A 32 bit number is composed from 4 octets and each octet is a 256 different values because an octet contains 8 bits. 
+Also a Subnet Mask defines the devices that can be used in a LAN:
+IP-192.168.1.10 Network Mask - 255.255.255.0(/24) - Host Portion Bits - 8 bits(the last octet) - usable hosts - 254 (unique IP addresses)
+in this case the only part of the IP that is changing is the last 3 digits. 192.168.0.0/24 till 192.168.0.255/24 
+IP-172.16.0.0 Network Mask - 255.255.0.0(/16) - Host Portion Bits -16 (the last two octets) usable hosts - 65500 (unique IP addresses)
+In this case the part that is changing is the last two octets 172.16.0.0/16 till 172.16.255.255/16 
+IP-10.0.0.0 - Network Mask - 255.0.0.0(/8) - Host Portion Bits - 24 bits(last three octets) - Usable Hosts - 16.7 million (unique IP addresses) 
+In this case the last three octets are changing 10.0.0.0/8 till 10.255.255.255/8 
+
+Gateway - in computer networking is a crucial node that acts as a bridge between two networks that use different protocols. The default Gateway in home networks is the IP address of your router
+Gateway vs Router vs Modem
+Modem - connects your home to the ISP(cable/fiber)
+Router - connects multiple devices within you home to create a LAN
+Gateway - A single device provided by ISP that combines Modem and Router into one box. 
+
+DNS -Domain Name System - translates human-friendly domain names like www.google.com into machine readable IP addresses like 172.217.18.14(google address after ping google.com)
+
+Ports and Network Protocols 
+A port is a logical construct that acts as a communication endpoint within an operating system. 
+Think of an IP address as the address of a building and the port number as the specific apartment or office inside that building. 
+Identification - Ports are identified by a 16 bit number. This means that the range of ports is from 0 to 65535(256 times 256) found in the header of transport layer like TCP and UDP
+Well known ports (0-1023): Reserved for the most commonly used public services. E.g. Port 80 for HTTP, Port 443 for HTTPS. Registered ports(1024-49151) used by specific applications(port 3000 for Grafana)
+Network Protocols -  is a set of rules and procedures that govern how devices on a network format, transmit and receive data. 
+Transport Protocols: Manage the transfer of data between applications  
+TCP - Transmission Control Protocol - Connection oriented, reliable, ensures data arrives in order
+UPD - User Datagram Protocol - Connectionless, faster but less reliable. used for streaming or gaming where speed is critical. 
+Application Protocols - Governs how a specific application exchanges data
+HTTP/HTTPS - Web traffic
+FTP - File Transfer
+SMTP/POP3/IMAP - email
+DNS - Domain Name Resolution
+SSH - Secure Shell 
+DHCP - Dynamic Host Configuration Protocol 
+
+
+HOMEWORK
+In command prompt type:
+ipconfig - to see your ipv4 and other communication related information
+ipconfig -all to see more details about your connections.
+ping - to a specific website like google.com
+ping - to an IP address like 172.217.18.14 
+ping -h to see the options you cand add to your ping command.
+tracert - to a website like google.com to see all the "nodes" that your traffic is routed.
+tracert - to see the options for the tracert command. 
+
+

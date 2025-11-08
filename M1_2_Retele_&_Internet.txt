@@ -1,0 +1,30 @@
+Basics of Networks and Internet
+
+
+For the beginning of the lesson we will install Fing app on mobile phone or pc/laptop and scan the Wi-Fi network
+We can see the connected devices and the IP address of that devices. 
+Also with Fing we can see and track other people's devices if they are connected to a Wi-Fi network. 
+After the scan we will se the devices in the network and the router.
+The router connects our LAN Network with the internet
+The main topic in this module is the IP addresses private/public, router, LAN and ISP. 
+I already know the difference between private and public IP. I know what is a router, I know what is a LAN network, and ISP. 
+Another term is WAN which means Wide Area Network. 
+
+The above part I already covered in M1_1_Bazele_Reteleleor
+
+
+OSI Model - 7 Layers
+
+OSI Model           Protocols and Services        TCP/IP Model
+
+1  Physical        Ethernet, Fi-Fi                Link
+2  Datalink
+3  Network          IP,ARP, ICMP                  Internet
+4  Transport       TCP/UDP                        Transport
+5  Session         HTTP, HTTPS, FTP, DHCP, PNG    Application
+6  Presentation
+7  Application
+
+
+After this I installed Wireshark and watched the traffic in the Wi-Fi network. 
+
