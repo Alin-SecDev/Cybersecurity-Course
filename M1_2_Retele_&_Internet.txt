@@ -28,4 +28,17 @@ OSI Model           Protocols and Services        TCP/IP Model
 
 After this I installed Wireshark and watched the traffic in the Wi-Fi network. 
 
+The next discussed topic is ARP which means Address Resolution Protocol 
+In LAN without ARP the communication is not possible because in LAN the communication is established between MAC so for IP address A it will be assigned MAC address A and after that the communication in LAN will be MAC based. 
 
+After all this the homework is: Start wireshark as admin, Scan the network traffic and make a screenshot, scan the traffic with TCP filter, HTTP filter and ARP filter. Make a screenshot for each instance. 
+
+
+Next main topic is: Network simulate with Cisco Packet Tracer
+
+After install and login in Cisco Packet Tracer create a network composing of 1 router 2911, one switch 2960, one pc and one laptop. 
+Connect them with a direct cable as: a direct connection from pc to switch. Another direct connection from laptop to switch and another direct connection from switch to router. The switch and router should be connected with gigabit port. 
+after the connections , click on the router and choose CLI to configure the router. 
+type ? and press enter to see the options available to the router> menu. 
+type enable to log in to the privileged mode. The router> is representing user mode. The router# is representing privileged mode. 
+In privileged mode we have access to more functions of the router. Type ? to see the commands available to privileged mode
