@@ -42,3 +42,61 @@ after the connections , click on the router and choose CLI to configure the rout
 type ? and press enter to see the options available to the router> menu. 
 type enable to log in to the privileged mode. The router> is representing user mode. The router# is representing privileged mode. 
 In privileged mode we have access to more functions of the router. Type ? to see the commands available to privileged mode
+As an example if we type show version - it will show the version of OS for the router.
+If we type show ip interface brief - it will show all the gigabit connections interfaces  
+If we want to change the name of the router we need to type: config terminal and the router will enter in config mode
+Type hostname R1 to change the name from the router to R1 
+!!! In the config mode we can make any modification to the router. 
+
+Now let's set up an ip address for the router.
+in config terminal command type interface ? to see al the interface commands or type interface Gig0/0 to access that interface 
+after that in R1 (config-if)# type  ip address 192.168.1.1 ? with space after and ? this and  config the subnet mask to 255.255.255.0 and press enter. 
+
+after this to start the router you need to type: no shutdown (some commands need to be negated to start an option or the device)
+
+
+Now we will extend the exercise with another router and a server. The connection between the router and the server must be made with a crossover cable instead of straight connection. In the case of two identical equipment's, the connection must be made with a crossover cable. Even if the router and the server are not identical, the connection pins are identical that meaning that a crossover connection is needed. 
+
+Now for the setup.
+On R1 we type:
+enable if we are in R1> mode
+conf t(we can use shortcuts)
+int Gig0/2
+ip address 89.123.45.1 ? 255.255.255.0 
+no sh (instead of no shutdown command to start that port/interface)
+
+Now for the next router
+enable
+conf t
+hostname R2 
+int Gig0/2
+ip address 89.123.45.2 ? 255.255.255.0 
+no sh
+end(to exit to R1# mode) 
+ping 89.123.45.1 and we will need to have a ok connection. 
+conf t
+int Gig0/1 
+ip address 10.0.0.1 255.255.255.0
+no sh
+
+On the server we go to desktop - ip configuration 
+ip address 10.0.0.2
+subnet mask 255.255.255.0
+default gateway 10.0.0.1
+
+Now we can test with a ping from 10.0.0.2 to 10.0.0.1 
+
+if we test with a ping from the pc 192.168.1.2 to 10.0.0.2 we will get host unreachable because there is no connection between the routers. This means that R1 doesn't know how to reach the LAN of R2 and vice versa. 
+
+Now we go on R1 and type
+show ip int brief
+show ip route (this will show the routing interface) 
+conf t
+int Gig0/2
+ip route 10.0.0.0 255.255.255.0 89.123.45.2  (this will add the route of the data trough router 2)
+
+
+Now we go on R2 and type:
+conf t
+int Gig0/1
+ip route 192.168.1.0 255.255.255.0 89.123.45.1
