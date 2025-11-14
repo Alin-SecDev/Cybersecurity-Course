@@ -54,6 +54,8 @@ after that in R1 (config-if)# type  ip address 192.168.1.1 ? with space after an
 
 after this to start the router you need to type: no shutdown (some commands need to be negated to start an option or the device)
 
+now add the ip for pc and laptop. pc 192.168.1.2 and laptop 192.168.1.3
+
 
 Now we will extend the exercise with another router and a server. The connection between the router and the server must be made with a crossover cable instead of straight connection. In the case of two identical equipment's, the connection must be made with a crossover cable. Even if the router and the server are not identical, the connection pins are identical that meaning that a crossover connection is needed. 
 

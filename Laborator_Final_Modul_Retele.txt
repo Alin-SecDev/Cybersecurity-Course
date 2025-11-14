@@ -1,0 +1,4 @@
+Pentru laboratorul final de vazut proiectul Andreei Vinereanu
+pare destul de complex. 
+Pe langa ce a folosit ea de adaugat mai multe end device wireless. Ea are doar un laptop conectat la un router wireless. 
+In proiectul meu as vrea sa simulez o infrastructura dintr-o zona de productie ca sa am motive sa adaug mai multe end device wireless. Telefoane, tablete, laptopuri, imprimante, camere de detectie. Poate si cateva routere ca access point pentru deviceurile mobile wireless.
