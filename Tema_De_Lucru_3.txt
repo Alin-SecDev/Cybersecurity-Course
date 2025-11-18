@@ -1,0 +1,5 @@
+This line is a test in powershell to add some information trough powershell to this file
+Second test to add information into the newly created txt file with PowerShell
+For this homework we will create a network in Cisco Packet Tracer. 
+The Network will be like this: pc -> sw -> router -> router -> sw -> server. 
+The ip address will be set static on every equipment one domain will be 192.168.1.0 and the second one will be 10.0.0.0
