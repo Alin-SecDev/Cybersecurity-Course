@@ -1,6 +1,7 @@
 Basics of Networks and Internet
 
 
+
 For the beginning of the lesson we will install Fing app on mobile phone or pc/laptop and scan the Wi-Fi network
 We can see the connected devices and the IP address of that devices. 
 Also with Fing we can see and track other people's devices if they are connected to a Wi-Fi network. 
@@ -11,6 +12,7 @@ I already know the difference between private and public IP. I know what is a ro
 Another term is WAN which means Wide Area Network. 
 
 The above part I already covered in M1_1_Bazele_Reteleleor
+
 
 
 OSI Model - 7 Layers
@@ -26,12 +28,14 @@ OSI Model           Protocols and Services        TCP/IP Model
 7  Application
 
 
+
 After this I installed Wireshark and watched the traffic in the Wi-Fi network. 
 
 The next discussed topic is ARP which means Address Resolution Protocol 
 In LAN without ARP the communication is not possible because in LAN the communication is established between MAC so for IP address A it will be assigned MAC address A and after that the communication in LAN will be MAC based. 
 
 After all this the homework is: Start wireshark as admin, Scan the network traffic and make a screenshot, scan the traffic with TCP filter, HTTP filter and ARP filter. Make a screenshot for each instance. 
+
 
 
 Next main topic is: Network simulate with Cisco Packet Tracer
@@ -53,7 +57,6 @@ enable -> enter in privileged mode
 conf t or configure terminal -> global config
 no ip domain-lookup
 
-
 Now let's set up an ip address for the router.
 in config terminal command type interface ? to see al the interface commands or type interface Gig0/0 to access that interface 
 after that in R1 (config-if)# type  ip address 192.168.0.1 ? with space after and ? this and  config the subnet mask to 255.255.255.0 and press enter. 
@@ -61,7 +64,6 @@ after that in R1 (config-if)# type  ip address 192.168.0.1 ? with space after an
 after this to start the router you need to type: no shutdown (some commands need to be negated to start an option or the device)
 
 now add the ip for pc and laptop. pc 192.168.0.2 and laptop 192.168.0.3
-
 
 Now we will extend the exercise with another router and a server. The connection between the router and the server must be made with a crossover cable instead of straight connection. In the case of two identical equipment's, the connection must be made with a crossover cable. Even if the router and the server are not identical, the connection pins are identical that meaning that a crossover connection is needed.
 We connect the fastethernet0 from the server with the Gig0/1 from the Router2 and the Gig0/2 from the Router2 to Gig0/2 from the Router1 
@@ -105,12 +107,10 @@ conf t
 int Gig0/2
 ip route 10.0.0.0 255.255.255.0 89.123.45.2  (this will add the route of the data trough router 2)
 
-
 Now we go on R2 and type:
 conf t
 int Gig0/1
 ip route 192.168.1.0 255.255.255.0 89.123.45.1
-
 
 Switch Configuration
 enable
@@ -122,7 +122,6 @@ show run -> to see the  data like name, password or other information.
 
 Because the Switch communicate via MAC address we cannot add ip address to its fast ethernet ports. So we will add the ip address to its virtual lan. and we saw that vlan wen typed: show ip int brief. We do this to can connect remotely to the switch and to configure. 
 
-
 enable
 type password - admin -
 conf t
@@ -132,8 +131,6 @@ no sh
 exit
 show ip interface brief -> we will see the ip to the Vlan1 interface
 After this we can ping from pc or laptop the 192.168.0.100 to check the connection.
-
-
 
 Configure Telnet on the Swtich1 
 enable
@@ -146,10 +143,8 @@ now we can connect to the switch from pc or laptop.
 From cmd, if we connect for the first time ping 192.168.0.100
 telent 192.168.0.100 -> and after we enter the password - admin - we are connected to Switch1 
 
-
 About telnet. Is not the recommended way to connect remotely to a device. The information is not secured and it can be intercepted. The best and correct way to connect remotely is SSH. 
 But because this switch cannot have a ssh connection we will make a ssh connection to one of the routers. 
-
 
 SSH on Router1
 enable
@@ -167,3 +162,90 @@ ssh -l alin 192.168.0.1
 admin
 and now we will enter directly in privileged mode. 
 show users -> to see the users connected to the router.(optional) 
+
+
+
+What is VLAN and Switch Config with VLAN. 
+
+VLAN - Virtual Local Area Network
+The main purpose of a switch is to create connection to end devices. 
+The number of physical ports on a switch is 12,24 and 48 
+VLAN - Access Mode - this is communication with end devices - this will be configured on each port 
+VLAN -Trunk Mode - this is communication between switches
+
+Three Reasons for using VLAN
+1. sharing the network between departments (sectioning/sections)
+2. security (isolation)
+3. Scalation 
+
+Now for the configuration of a network composed of two switches and 2 pc for each switch. 
+First we need to define the VLAN networks. One will be PRODUCTION VLAN and the other will be FINANCIAL VLAN
+VLAN 10 - PROD
+VLAN 20 - FIN
+ON the SW1 we will have one pc for VLAN 10 - PROD and one pc for VLAN 20 - FIN
+PC1 FIN 192.168.20.2 255.255.255.0 subnet 192.168.20.1 DNS 8.8.8.8 with the fa0/1 switch port
+PC1 PROD 192.168.10.2 255.255.255.0 subnet 192.168.10.1 DNS 8.8.8.8 with the fa0/2 switch port
+ 
+On the SW2 we will have another pc for VLAN 10 - PROD and another one for VLAN 20 - FIN
+PC2 FIN 192.168.20.3 255.255.255.0 subnet 192.168.20.1 DNS 8.8.8.8 with the fa0/1 switch port
+PC2 PROD 192.168.10.3 255.255.255.0 subnet 192.168.10.1 DNS 8.8.8.8 with the fa0/2 switch port
+
+Now the configuration of VLAN for SW1. 
+enable
+conf t
+hostname SW1
+vlan 10
+name PROD
+end
+show vlan
+conf t
+vlan 20
+name FIN
+end
+show vlan
+conf t
+int fa0/1
+switchport mode access
+switchport access vlan 20
+exit
+int fa0/2
+switchport mode access
+switchport access vlan 10
+end
+show vlan
+
+Now the configuration of VLAN for SW2.
+enable
+conf t
+hostname SW2
+vlan 10
+name PROD
+vlan 20
+name FIN
+do show vlan
+exit
+int fa/01
+switchport mode access
+switchport access vlan 20
+exit
+int fa0/2
+switchport mode access
+switchport access vlan 10
+end 
+show vlan
+
+Now the trunk connection of SW1
+enable
+conf t
+int gig0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+do show int trunk
+
+Now the trunk connection of SW2
+enable
+conf t
+int gig0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+do show int trunk
