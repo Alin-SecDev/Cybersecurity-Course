@@ -3,4 +3,12 @@ DHCP
 Dynamic Host Control Protocol  
 HDCP it is responsible for dynamically allocation of ip addresses. 
 As in static IP address allocation, the DHCP server will automatically provide IP address, Subnet Mask, Default Gateway and DNS Server. 
+DHCP WILL NOT BE SET ON SERVERS. Dynamic ip address will not be set on servers. Only manual ip address will be set on servers.
+
+
+What not to do!!!
+
+Do not make 2 or more servers on the same network. 
+Do not set dynamic ip on router, server, switch, firewall...
+Do not set ip address range with ip addresses that are already in use. Example 1 router .1 2 switch .2,.3 2 servers .4,.5  the range in this case will be from 192.168.0.6 till 192.168.0.254
 
