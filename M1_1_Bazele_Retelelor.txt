@@ -11,22 +11,24 @@ AP(Acces Point)
 
 The main components of Internet:
 A network is grouping of interconnected devices. 
-This devices are called End Devices - which are: phones, laptops, pc's, embedded devices(IoT). This devices are starting or ending the communication trough internet. 
+This devices are called End Devices - which are: phones, laptops, pc's, printers or some servers,embedded devices(IoT).This devices are starting or ending the communication trough internet. 
 For the End Devices to work, intermediary devices are needed. 
 Intermediary devices are: switches, routers, firewalls, access points. 
 The communication in internet can be made trough wires, air(wireless) and light(fiber optics)
+And for the internet to work there is a need for servers. Without them, probably there is no internet. 
 
 
 
 
 Network Types:
 Cele 3 principale
-LAN - Local Area Network - as the name this is only a local network that can be personal or a business network
-WAN - Wide Area Network - it can hold a more extended network. WAN is a network that upholds more other networks
+LAN - Local Area Network - as the name this is only a local network that can be personal or a business network. At home this can be a network composed of a router and some end devices connected to the router. 
+			   It can also be a network for a small business with 10 employees but it can also be a local network for a university with 1000 students or more. 
+WAN - Wide Area Network - it holds more networks.  As a example Romania can be a WAN. Or eastern region of Europe can be a WAN. It is made from more LAN's
 WLAN - Wireless Local Area Network
 Cele secundare:
 PAN - Personal Area Network - devices that are directly connected - Bluetooth, Wi-Fi. 
-MAN - Metropolitan Area Network - more networks connected at a city surface
+MAN - Metropolitan Area Network - more networks connected at a city level. 
 SAN - Storage Area Network - a storage purpose network
 
 
