@@ -1,6 +1,6 @@
-Cuvinte cheie:
+Key Words:
 Internet
-Retea
+Network
 End-device  - pc, laptop, severs, printers, mobile phones. 
 Embeded-device
 Intermediary devices
@@ -9,7 +9,17 @@ Switch
 Firewall
 AP(Acces Point)
 
-Tipuri de retele:
+The main components of Internet:
+A network is grouping of interconnected devices. 
+This devices are called End Devices - which are: phones, laptops, pc's, embedded devices(IoT). This devices are starting or ending the communication trough internet. 
+For the End Devices to work, intermediary devices are needed. 
+Intermediary devices are: switches, routers, firewalls, access points. 
+The communication in internet can be made trough wires, air(wireless) and light(fiber optics)
+
+
+
+
+Network Types:
 Cele 3 principale
 LAN - Local Area Network - as the name this is only a local network that can be personal or a business network
 WAN - Wide Area Network - it can hold a more extended network. WAN is a network that upholds more other networks
