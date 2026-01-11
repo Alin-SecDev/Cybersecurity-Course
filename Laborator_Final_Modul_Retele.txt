@@ -1,3 +1,4 @@
+De programat o discutie cu mentorul legat de partea de retelistica.
 Pentru laboratorul final de vazut proiectul Andreei Vinereanu
 pare destul de complex. 
 Pe langa ce a folosit ea de adaugat mai multe end device wireless. Ea are doar un laptop conectat la un router wireless. 
