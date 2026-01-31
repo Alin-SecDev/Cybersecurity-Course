@@ -1,3 +1,6 @@
+How Network and Internet works:
+The Internet was created in 1969 with the purpose to connect Universities in the US
+
 Key Words:
 Internet
 Network
@@ -11,7 +14,7 @@ AP(Acces Point)
 
 The main components of Internet:
 A network is grouping of interconnected devices. 
-This devices are called End Devices - which are: phones, laptops, pc's, printers or some servers,embedded devices(IoT).This devices are starting or ending the communication trough internet. 
+This devices are called End Devices - which are: phones, laptops, pc's, printers or some servers, embedded devices(IoT).This devices are starting or ending the communication trough internet. 
 For the End Devices to work, intermediary devices are needed. 
 Intermediary devices are: switches, routers, firewalls, access points. 
 The communication in internet can be made trough wires, air(wireless) and light(fiber optics)
